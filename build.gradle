@@ -16,18 +16,20 @@ configurations {
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'org.projectlombok:lombok'
 	runtimeOnly 'mysql:mysql-connector-java'
 	compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.5.0'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+	compile 'org.springframework.boot:spring-boot-starter-mustache'
+	//compile 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 test {
