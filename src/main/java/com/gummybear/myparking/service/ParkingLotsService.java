@@ -47,5 +47,22 @@ public class ParkingLotsService {
 	
 		return new ParkingLotsResponseDto(entity);
 	}
+	//내 위치 주변 주차장 정보 조회
+	public ParkingLotsResponseDto findByMyLocation(Long id) {
+		ParkingLots entity = parkingLotsRepository.findById(id).orElseThrow(() -> 
+		new IllegalArgumentException("해당 주차장 정보가 없습니다. id=" + id));
+		
+		return new ParkingLotsResponseDto(entity);
+	}
+	//parkingLotsService.findByOption(location1,location2,location3);
+	//institudeName Where 절
+	public ParkingLotsResponseDto findByOption(String location1, String location2, String location3) {
+		
+		String addroad = location1 +" " + location2 + " " +location3 + "%";
+		ParkingLots entity = parkingLotsRepository.findByRoadNameAddressLike(addroad).orElseThrow(() -> 
+		new IllegalArgumentException("해당 주차장 정보가 없습니다. addroad=" + addroad));
+		
+		return new ParkingLotsResponseDto(entity);
+	}
 
 }
