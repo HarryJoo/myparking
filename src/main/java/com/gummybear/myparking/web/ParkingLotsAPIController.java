@@ -39,7 +39,11 @@ public class ParkingLotsAPIController {
 	}	
 	
 	// B.MyParking API
-	// 1.내 위치 주변 주차장 정보 조회
+	// 1.내 위치 주변 주차장 정보 조회 //미완
+	@GetMapping("/api/v1/parking-lots/user/{location}")
+	public ParkingLotsResponseDto findByMyLocation(@PathVariable Long id) {
+		return parkingLotsService.findByMyLocation(id);
+	}
 	
 	// 2.사용자가 즐겨찾기 한 주차장 조회
 	@GetMapping("/api/v1/parking-lots/favorites/{id}")
@@ -47,7 +51,11 @@ public class ParkingLotsAPIController {
 		return parkingLotsService.selectFavorites(id);
 	}	
 	
-	// 3.조건으로 주차장 검색
+	// 3.조건으로 주차장 검색 시,도/구,군,시/동,읍
+	@GetMapping("/api/v1/parking-lots/search/{location1}/{location2}/{location3}")
+	public ParkingLotsResponseDto findByOption(@PathVariable String location1,@PathVariable String location2,@PathVariable String location3) {
+		return parkingLotsService.findByOption(location1,location2,location3);
+	}
 	
 	// 4. 주차장별 평가 데이터 조회
 	// @GetMapping("/api/v1/parking-lots/score/{id}")
