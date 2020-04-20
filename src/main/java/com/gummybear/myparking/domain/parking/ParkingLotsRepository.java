@@ -8,10 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface ParkingLotsRepository extends JpaRepository<ParkingLots, Long> {
-	
-	Optional<ParkingLots> findByRoadNameAddressLike(String addroad);
-	
 	@Query("SELECT p FROM ParkingLots p ORDER BY p.id ASC")
 	List<ParkingLots> findParkingLotInfo();
-	
+
+	Optional<ParkingLots> findByRoadNameAddressLike(String addroad);
 }
