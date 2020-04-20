@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.gummybear.myparking.domain.parking.ParkingLots;
 import com.gummybear.myparking.domain.parking.ParkingLotsRepository;
 import com.gummybear.myparking.web.dto.ParkingLotsRequestDto;
+import com.gummybear.myparking.web.dto.ParkingLotsUpdateRequestDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -201,14 +202,14 @@ public class ParkingLotsAPIControllerTest {
 		String expectedParkingLotNo = "391-2-999999";
 		String expectedParkingLotNm = "테스트주차장";
 		
-		ParkingLotsRequestDto requestDto = ParkingLotsRequestDto.builder()
+		ParkingLotsUpdateRequestDto requestDto = ParkingLotsUpdateRequestDto.builder()
 											.parkingLotNo(expectedParkingLotNo)
 											.parkingLotNm(expectedParkingLotNm)
 											.build();
 		
 		String url = "http://localhost:" + port + "/api/v1/parking-lots/" + updateId;
 		
-		HttpEntity<ParkingLotsRequestDto> requestEntity = new HttpEntity<>(requestDto);
+		HttpEntity<ParkingLotsUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
 		
 		//when
 		ResponseEntity<Long> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, 

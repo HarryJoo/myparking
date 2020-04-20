@@ -30,7 +30,7 @@ public class ParkingLotsRequestDto {
 	
 	private String parkingLotType;
 	
-	@Column(columnDefinition = "TEXT", nullable = false)
+	@Column(columnDefinition = "TEXT")
 	private String roadNameAddress;
 	
 	@Column(columnDefinition = "TEXT", nullable = false)

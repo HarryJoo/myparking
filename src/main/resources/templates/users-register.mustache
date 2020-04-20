@@ -1,0 +1,34 @@
+{{>layout/header}}
+
+<h1>사용자 데이터 등록</h1>
+
+<div class="col-md-12">
+	<div class="col-md-4">
+		<form name="usersForm">
+			<div class="form-group">
+				<label for="name">이름</label>
+				<input type="text" class="form-control" id="name" name="name" placeholder="이름을 입력해주세요">
+			</div>
+			<div class="form-group">
+				<label for="email">이메일</label>
+				<input type="text" class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요">
+			</div>
+			<div class="form-group">
+				<label for="picture">사진</label>
+				<input type="text" class="form-control" id="picture" name="picture" placeholder="사진을 입력해주세요">
+			</div>
+			<div class="form-group">
+				<label for="role">역할</label>
+				<select class="form-control" id="role" name="role">
+				    <option value="GUEST">손님</option>
+				    <option value="USER">일반 사용자</option>
+				</select>
+			</div>
+		</form>
+		<a href="/" role="button" class="btn btn-secondary">취소</a>
+		<button type="button" class="btn btn-primary" id="btn-save">등록</button>
+	</div>
+</div>
+<br>
+
+{{>layout/footer}}

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gummybear.myparking.service.ParkingLotsService;
 import com.gummybear.myparking.web.dto.ParkingLotsRequestDto;
 import com.gummybear.myparking.web.dto.ParkingLotsResponseDto;
+import com.gummybear.myparking.web.dto.ParkingLotsUpdateRequestDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,7 +21,7 @@ public class ParkingLotsAPIController {
 	private final ParkingLotsService parkingLotsService;
 	
 	// A.Test...
-	// 1.주차장 데이터 추가 저장
+	// 1.주차장 데이터 등록
 	@PostMapping("/api/v1/parking-lots")
 	public Long save(@RequestBody ParkingLotsRequestDto requestDto) {
 		return parkingLotsService.save(requestDto);
@@ -28,7 +29,7 @@ public class ParkingLotsAPIController {
 	
 	// 2.주차장 데이터 수정
 	@PutMapping("/api/v1/parking-lots/{id}")
-	public Long update(@PathVariable Long id, @RequestBody ParkingLotsRequestDto requestDto) {
+	public Long update(@PathVariable Long id, @RequestBody ParkingLotsUpdateRequestDto requestDto) {
 		return parkingLotsService.update(id, requestDto);
 	}
 	
@@ -39,7 +40,11 @@ public class ParkingLotsAPIController {
 	}	
 	
 	// B.MyParking API
-	// 1.내 위치 주변 주차장 정보 조회
+	// 1.내 위치 주변 주차장 정보 조회 //미완
+	@GetMapping("/api/v1/parking-lots/user/{location}")
+	public ParkingLotsResponseDto findByMyLocation(@PathVariable Long id) {
+		return parkingLotsService.findByMyLocation(id);
+	}
 	
 	// 2.사용자가 즐겨찾기 한 주차장 조회
 	@GetMapping("/api/v1/parking-lots/favorites/{id}")
@@ -47,9 +52,18 @@ public class ParkingLotsAPIController {
 		return parkingLotsService.selectFavorites(id);
 	}	
 	
-	// 3.조건으로 주차장 검색
+	// 3.조건으로 주차장 검색 시,도/구,군,시/동,읍
+	@GetMapping("/api/v1/parking-lots/search/{location1}/{location2}/{location3}")
+	public ParkingLotsResponseDto findByOption(@PathVariable String location1,@PathVariable String location2,@PathVariable String location3) {
+		return parkingLotsService.findByOption(location1,location2,location3);
+	}
 	
-	// 4. 주차장별 평가 데이터 조회
-	// @GetMapping("/api/v1/parking-lots/score/{id}")
-
+	// 4.평가 데이터 별 주차장 조회
+	/*
+	@GetMapping("/api/v1/parking-lots/score")
+	public ParkingLotsResponseDto selectByScore(@RequestParam int page) {
+		return parkingLotsService.selectByScore(page);
+	}
+	*/
+	
 }

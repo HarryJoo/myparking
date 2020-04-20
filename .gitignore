@@ -8,6 +8,9 @@ build/
 ### bin ###
 /bin
 
+### 보안을 위해 깃허브 업로드 방지 ###
+application-oauth.properties
+
 ### STS ###
 .apt_generated
 .classpath

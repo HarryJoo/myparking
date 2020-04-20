@@ -1,0 +1,50 @@
+{{>layout/header}}
+
+<h1>MyParking 웹 서비스</h1>
+<!-- 로그인 기능 영역 -->
+<div class="col-md-12">
+	<div class="row">
+		<div class="col-md-6">
+			<a href="/parking-lots/register" role="button" class="btn btn-primary">주차장 데이터 등록</a>
+			<a href="/parking-lots/view" role="button" class="btn btn-primary">주차장 데이터 보기</a>
+			<!-- {{#userName}} userName이 있는 경우...
+				Logged in as : <span id="user">{{username}}</span>
+			<a href="/logout" class="btn btn-info active" role="button">Logout</a> 스프링 시큐리티 제공 로그아웃 URL
+			{{/userName}}
+			{{^userName}} userName이 없는 경우...
+			<a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+			{{/userName}} -->
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-6">
+			<a href="/users/register" role="button" class="btn btn-primary">사용자 데이터 등록</a>
+			<a href="/users/register" role="button" class="btn btn-primary">사용자 데이터 보기</a>
+		</div>
+	</div>
+	<br>
+	<!-- 목록 출력 영역 -->
+	<table class="table table-horizontal table-bordered">
+		<thead class="thead-strong">
+			<tr>
+				<th>이름</th>
+				<th>이메일</th>
+				<th>사진</th>
+				<th>권한</th>
+			</tr>
+		</thead>
+		<tbody id="tbody">
+		{{#user}}
+			<tr>
+				<td>{{name}}</td>
+				<td>{{email}}</td>
+				<td>{{picture}}</td>
+				<td>{{role}}</td>
+			</tr>
+		{{/user}}
+		</tbody>			
+	</table>	
+</div>
+
+{{>layout/footer}}

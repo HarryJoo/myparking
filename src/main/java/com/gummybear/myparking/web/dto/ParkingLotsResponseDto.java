@@ -20,7 +20,7 @@ public class ParkingLotsResponseDto {
 	private String parkingLotNm;
 	private String parkingLotSection;
 	private String parkingLotType;
-	@Column(columnDefinition = "TEXT", nullable = false)
+	@Column(columnDefinition = "TEXT")
 	private String roadNameAddress;
 	@Column(columnDefinition = "TEXT", nullable = false)
 	private String numberNameAddress;
