@@ -55,10 +55,12 @@ public class ParkingLotsResponseDto {
 	private String institudeName;
 	
 	public ParkingLotsResponseDto(ParkingLots entity) {
+		this.id = entity.getId();
 		this.parkingLotNo = entity.getParkingLotNo();
 		this.parkingLotNm = entity.getParkingLotNm();
 		this.parkingLotSection = entity.getParkingLotSection();
 		this.parkingLotType = entity.getParkingLotType();
+		this.roadNameAddress = entity.getRoadNameAddress();
 		this.numberNameAddress = entity.getNumberNameAddress();
 		this.parkingCompartment = entity.getParkingCompartment();
 		this.feedDivision = entity.getFeedDivision();
@@ -78,6 +80,8 @@ public class ParkingLotsResponseDto {
 		this.dayParkingFeeApplicationTime = entity.getDayParkingFeeApplicationTime();
 		this.dayParkingFee = entity.getDayParkingFee();
 		this.monthlyFee = entity.getMonthlyFee();
+		this.paymentMethod = entity.getPaymentMethod();
+		this.remarks = entity.getRemarks();
 		this.managementAgencyName = entity.getManagementAgencyName();
 		this.managementAgencyPhoneNumber = entity.getManagementAgencyPhoneNumber();
 		this.latitude = entity.getLatitude();

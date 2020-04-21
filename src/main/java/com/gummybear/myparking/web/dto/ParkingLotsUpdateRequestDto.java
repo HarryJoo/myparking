@@ -94,17 +94,18 @@ public class ParkingLotsUpdateRequestDto {
 	
 	@Builder
 	public ParkingLotsUpdateRequestDto(String parkingLotNo, String parkingLotNm, 
-			String parkingLotSection, String parkingLotType, String numberNameAddress, String parkingCompartment,
+			String parkingLotSection, String parkingLotType, String roadNameAddress, String numberNameAddress, String parkingCompartment,
 			String feedDivision, String alternateDayNoDrivingDivision, String operatingDay, String weekdayOpeningHour,
 			String weekdayClosingHour, String saturdayOpeningHour, String saturdayClosingHour, String holidayOpeningHour,
 			String holidayClosingHour, String parkingFeeInfomation, int basicParkingTime, int basicParkingFee,
 			String additionalParkingFee, String additionalUnitTime, String dayParkingFeeApplicationTime, String dayParkingFee, 
-			String monthlyFee, String managementAgencyName, String managementAgencyPhoneNumber, String latitude, 
+			String monthlyFee, String paymentMethod, String remarks, String managementAgencyName, String managementAgencyPhoneNumber, String latitude, 
 			String longitude, String referenceDate, String institudeCode, String institudeName) {
 		this.parkingLotNo = parkingLotNo;
 		this.parkingLotNm = parkingLotNm;
 		this.parkingLotSection = parkingLotSection;
 		this.parkingLotType = parkingLotType;
+		this.roadNameAddress = roadNameAddress;
 		this.numberNameAddress = numberNameAddress;
 		this.parkingCompartment = parkingCompartment;
 		this.feedDivision = feedDivision;
@@ -124,6 +125,8 @@ public class ParkingLotsUpdateRequestDto {
 		this.dayParkingFeeApplicationTime = dayParkingFeeApplicationTime;
 		this.dayParkingFee = dayParkingFee;
 		this.monthlyFee = monthlyFee;
+		this.paymentMethod = paymentMethod;
+		this.remarks = remarks;
 		this.managementAgencyName = managementAgencyName;
 		this.managementAgencyPhoneNumber = managementAgencyPhoneNumber;
 		this.latitude = latitude;
@@ -139,6 +142,7 @@ public class ParkingLotsUpdateRequestDto {
 				.parkingLotNm(parkingLotNm)
 				.parkingLotSection(parkingLotSection)
 				.parkingLotType(parkingLotType)
+				.roadNameAddress(roadNameAddress)
 				.numberNameAddress(numberNameAddress)
 				.parkingCompartment(parkingCompartment)
 				.feedDivision(feedDivision)
@@ -158,6 +162,8 @@ public class ParkingLotsUpdateRequestDto {
 				.dayParkingFeeApplicationTime(dayParkingFeeApplicationTime)
 				.dayParkingFee(dayParkingFee)
 				.monthlyFee(monthlyFee)
+				.paymentMethod(paymentMethod)
+				.remarks(remarks)
 				.managementAgencyName(managementAgencyName)
 				.managementAgencyPhoneNumber(managementAgencyPhoneNumber)
 				.latitude(latitude)

@@ -1,7 +1,7 @@
 var users = {
 		init : function() {
 			var _this = this;
-			$('#btn-save').on('click', function () {
+			$('#users-btn-save').on('click', function () {
 				_this.save();
 			});
 		},

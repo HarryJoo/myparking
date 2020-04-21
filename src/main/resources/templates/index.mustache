@@ -6,25 +6,25 @@
 	<div class="row">
 		<div class="col-md-6">
 			<a href="/parking-lots/register" role="button" class="btn btn-primary">주차장 데이터 등록</a>
-			<a href="/parking-lots/view" role="button" class="btn btn-primary">주차장 데이터 보기</a>
-			<!-- {{#userName}} userName이 있는 경우...
-				Logged in as : <span id="user">{{username}}</span>
-			<a href="/logout" class="btn btn-info active" role="button">Logout</a> 스프링 시큐리티 제공 로그아웃 URL
+			<a href="/parking-lots/view" role="button" class="btn btn-primary">주차장 목록 조회</a>
+			{{#userName}} <!-- userName이 있는 경우... -->
+				Logged in as : <span id="user">{{userName}}</span> (<span id="role">{{userRole}}</span>)
+			<a href="/logout" class="btn btn-info active" role="button">Logout</a> <!-- 스프링 시큐리티 제공 로그아웃 URL -->
 			{{/userName}}
-			{{^userName}} userName이 없는 경우...
+			{{^userName}} <!-- userName이 없는 경우... -->
 			<a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-			{{/userName}} -->
+			{{/userName}}
 		</div>
 	</div>
-	<br>
+	<!-- <br>
 	<div class="row">
 		<div class="col-md-6">
 			<a href="/users/register" role="button" class="btn btn-primary">사용자 데이터 등록</a>
-			<a href="/users/register" role="button" class="btn btn-primary">사용자 데이터 보기</a>
+			<a href="/users/register" role="button" class="btn btn-primary">사용자 목록 조회</a>
 		</div>
 	</div>
 	<br>
-	<!-- 목록 출력 영역 -->
+	목록 출력 영역
 	<table class="table table-horizontal table-bordered">
 		<thead class="thead-strong">
 			<tr>
@@ -44,7 +44,7 @@
 			</tr>
 		{{/user}}
 		</tbody>			
-	</table>	
+	</table> -->	
 </div>
 
 {{>layout/footer}}

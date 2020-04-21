@@ -1,0 +1,151 @@
+{{>layout/header}}
+
+<h1>주차장 데이터 수정</h1>
+<div class="col-md-12">
+	<div class="col-md-4">
+		<form name="parkingLotsForm">
+			<div class="form-group">
+				<label for="id">번호</label>
+				<input type="text" class="form-control" id="id" value="{{parkingLots.id}}" readonly>
+			</div>
+			<div class="form-group">
+				<label for="parking_lot_no">주차장 관리번호</label>
+				<input type="text" class="form-control" id="parkingLotNo" name="parkingLotNo" value="{{parkingLots.parkingLotNo}}">
+			</div>
+			<div class="form-group">
+				<label for="parking_lot_nm">주차장 이름</label>
+				<input type="text" class="form-control" id="parkingLotNm" name="parkingLotNm" value="{{parkingLots.parkingLotNm}}">
+			</div>
+			<div class="form-group">
+				<label for="parking_lot_section">주차장 구분</label>
+				<input type="text" class="form-control" id="parkingLotSection" name="parkingLotSection" value="{{parkingLots.parkingLotSection}}">
+			</div>
+			<div class="form-group">
+				<label for="parking_lot_type">주차장 유형</label>
+				<input type="text" class="form-control" id="parkingLotType" name="parkingLotType" value="{{parkingLots.parkingLotType}}">
+			</div>
+			<div class="form-group">
+				<label for="road_name_address">소재지도로명주소</label>
+				<input type="text" class="form-control" id="roadNameAddress" name="roadNameAddress" value="{{parkingLots.roadNameAddress}}">
+			</div>
+			<div class="form-group">
+				<label for="number_name_address">소재지지번주소</label>
+				<input type="text" class="form-control" id="numberNameAddress" name="numberNameAddress" value="{{parkingLots.numberNameAddress}}">
+			</div>
+			<div class="form-group">
+				<label for="parking_compartment">주차구획수</label>
+				<input type="text" class="form-control" id="parkingCompartment" name="parkingCompartment" value="{{parkingLots.parkingCompartment}}">
+			</div>
+			<div class="form-group">
+				<label for="feed_division">급지구분</label>
+				<input type="text" class="form-control" id="feedDivision" name="feedDivision" value="{{parkingLots.feedDivision}}">
+			</div>
+			<div class="form-group">
+				<label for="alternate_day_no_driving_division">부제시행구분</label>
+				<input type="text" class="form-control" id="alternateDayNoDrivingDivision" name="alternateDayNoDrivingDivision" value="{{parkingLots.alternateDayNoDrivingDivision}}">
+			</div>
+			<div class="form-group">
+				<label for="operating_day">운영요일</label>
+				<input type="text" class="form-control" id="operatingDay" name="operatingDay" value="{{parkingLots.operatingDay}}">
+			</div>
+			<div class="form-group">
+				<label for="weekday_opening_hour">평일운영시작시각</label>
+				<input type="text" class="form-control" id="weekdayOpeningHour" name="weekdayOpeningHour" value="{{parkingLots.weekdayOpeningHour}}">
+			</div>
+			<div class="form-group">
+				<label for="weekday_closing_hour">평일운영종료시각</label>
+				<input type="text" class="form-control" id="weekdayClosingHour" name="weekdayClosingHour" value="{{parkingLots.weekdayClosingHour}}">
+			</div>
+			<div class="form-group">
+				<label for="saturday_opening_hour">토요일운영시작시각</label>
+				<input type="text" class="form-control" id="saturdayOpeningHour" name="saturdayOpeningHour" value="{{parkingLots.saturdayOpeningHour}}">
+			</div>
+			<div class="form-group">
+				<label for="saturday_closing_hour">토요일운영종료시각</label>
+				<input type="text" class="form-control" id="saturdayClosingHour" name="saturdayClosingHour" value="{{parkingLots.saturdayClosingHour}}">
+			</div>
+			<div class="form-group">
+				<label for="holiday_opening_hour">공휴일운영시작시각</label>
+				<input type="text" class="form-control" id="holidayOpeningHour" name="holidayOpeningHour" value="{{parkingLots.holidayOpeningHour}}">
+			</div>
+			<div class="form-group">
+				<label for="holiday_closing_hour">공휴일운영종료시각</label>
+				<input type="text" class="form-control" id="holidayClosingHour" name="holidayClosingHour" value="{{parkingLots.holidayClosingHour}}">
+			</div>
+			<div class="form-group">
+				<label for="parking_fee_infomation">요금정보</label>
+				<input type="text" class="form-control" id="parkingFeeInfomation" name="parkingFeeInfomation" value="{{parkingLots.parkingFeeInfomation}}">
+			</div>
+			<div class="form-group">
+				<label for="basic_parking_time">주차기본시간</label>
+				<input type="text" class="form-control" id="basicParkingTime" name="basicParkingTime" value="{{parkingLots.basicParkingTime}}">
+			</div>
+			<div class="form-group">
+				<label for="basic_parking_fee">주차기본요금</label>
+				<input type="text" class="form-control" id="basicParkingFee" name="basicParkingFee" value="{{parkingLots.basicParkingFee}}">
+			</div>
+			<div class="form-group">
+				<label for="additional_unit_time">추가단위시간</label>
+				<input type="text" class="form-control" id="additionalUnitTime" name="additionalUnitTime" value="{{parkingLots.additionalUnitTime}}">
+			</div>
+			<div class="form-group">
+				<label for="additional_parking_fee">추가단위요금</label>
+				<input type="text" class="form-control" id="additionalParkingFee" name="additionalParkingFee" value="{{parkingLots.additionalParkingFee}}">
+			</div>
+			<div class="form-group">
+				<label for="day_parking_fee_application_time">1일주차권요금적용시간</label>
+				<input type="text" class="form-control" id="dayParkingFeeApplicationTime" name="dayParkingFeeApplicationTime" value="{{parkingLots.dayParkingFeeApplicationTime}}">
+			</div>
+			<div class="form-group">
+				<label for="day_parking_fee">1일주차권요금</label>
+				<input type="text" class="form-control" id="dayParkingFee" name="dayParkingFee" value="{{parkingLots.dayParkingFee}}">
+			</div>
+			<div class="form-group">
+				<label for="monthlyFee">1일주차권요금</label>
+				<input type="text" class="form-control" id="monthlyFee" name="monthlyFee" value="{{parkingLots.monthlyFee}}">
+			</div>
+			<div class="form-group">
+				<label for="payment_method">결제방법</label>
+				<input type="text" class="form-control" id="paymentMethod" name="paymentMethod" value="{{parkingLots.paymentMethod}}">
+			</div>
+			<div class="form-group">
+				<label for="remarks">특기사항</label>
+				<input type="text" class="form-control" id="remarks" name="remarks" value="{{parkingLots.remarks}}">
+			</div>
+			<div class="form-group">
+				<label for="management_agency_name">관리기관명</label>
+				<input type="text" class="form-control" id="managementAgencyName" name="managementAgencyName" value="{{parkingLots.managementAgencyName}}">
+			</div>
+			<div class="form-group">
+				<label for="management_agency_phone_number">전화번호</label>
+				<input type="text" class="form-control" id="managementAgencyPhoneNumber" name="managementAgencyPhoneNumber" value="{{parkingLots.managementAgencyPhoneNumber}}">
+			</div>
+			<div class="form-group">
+				<label for="latitude">위도</label>
+				<input type="text" class="form-control" id="latitude" name="latitude" value="{{parkingLots.latitude}}">
+			</div>
+			<div class="form-group">
+				<label for="longitude">경도</label>
+				<input type="text" class="form-control" id="longitude" name="longitude" value="{{parkingLots.longitude}}">
+			</div>
+			<div class="form-group">
+				<label for="reference_date">데이터기준일자</label>
+				<input type="text" class="form-control" id="referenceDate" name="referenceDate" value="{{parkingLots.referenceDate}}">
+			</div>
+			<div class="form-group">
+				<label for="institude_code">제공기관코드</label>
+				<input type="text" class="form-control" id="institudeCode" name="institudeCode" value="{{parkingLots.institudeCode}}">
+			</div>
+			<div class="form-group">
+				<label for="institude_name">제공기관명</label>
+				<input type="text" class="form-control" id="institudeName" name="institudeName" value="{{parkingLots.institudeName}}">
+			</div>
+		</form>
+		<a href="/" role="button" class="btn btn-secondary">취소</a>
+		<button type="button" class="btn btn-primary" id="parking-lots-btn-update">수정 완료</button>
+		<button type="button" class="btn btn-danger" id="parking-lots-btn-delete">삭제</button>
+	</div>
+</div>
+<br>
+
+{{>layout/footer}}

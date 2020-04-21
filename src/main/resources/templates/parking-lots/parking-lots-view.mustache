@@ -1,0 +1,40 @@
+{{>layout/header}}
+
+<h1>주차장 목록 조회</h1>
+<div class="col-md-10">
+	<!-- 목록 출력 영역 -->
+	<table class="table table-horizontal table-bordered">
+		<thead class="thead-strong">
+			<tr>
+				<th>ID</th>
+				<th>주차장 관리번호</th>
+				<th>주차장 이름</th>
+				<th>주차장 구분</th>
+				<th>주차장 유형</th>
+				<th>소재지도로명주소</th>
+				<th>소재지지번주소</th>
+			</tr>
+		</thead>
+		<tbody id="tbody">
+		{{#parkingLots}}
+			<tr>
+				<td>{{id}}</td>
+				<td>{{parkingLotNo}}</td>
+				<td><a href="/parking-lots/update/{{id}}">{{parkingLotNm}}</a></td>
+				<td>{{parkingLotSection}}</td>
+				<td>{{parkingLotType}}</td>
+				<td>
+					{{#roadNameAddress}}
+     						{{.}}
+ 						{{/roadNameAddress}}
+ 					</td>
+				<td>{{numberNameAddress}}</td>
+			</tr>
+		{{/parkingLots}}
+		</tbody>			
+	</table>
+	<a href="/" role="button" class="btn btn-secondary">이전화면</a>
+</div>
+<br>
+
+{{>layout/footer}}

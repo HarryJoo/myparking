@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ParkingLotsRepository extends JpaRepository<ParkingLots, Long> {
 	@Query("SELECT p FROM ParkingLots p ORDER BY p.id ASC")
-	List<ParkingLots> findParkingLotInfo();
+	List<ParkingLots> findParkingLotList();
 
 	Optional<ParkingLots> findByRoadNameAddressLike(String addroad);
 }

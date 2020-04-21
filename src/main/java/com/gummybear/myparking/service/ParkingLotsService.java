@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.gummybear.myparking.domain.parking.ParkingLots;
 import com.gummybear.myparking.domain.parking.ParkingLotsRepository;
+import com.gummybear.myparking.web.dto.ParkingLotsListResponseDto;
 import com.gummybear.myparking.web.dto.ParkingLotsRequestDto;
 import com.gummybear.myparking.web.dto.ParkingLotsResponseDto;
 import com.gummybear.myparking.web.dto.ParkingLotsUpdateRequestDto;
@@ -32,7 +33,7 @@ public class ParkingLotsService {
 		new IllegalArgumentException("해당 주차장 정보가 없습니다. id=" + id));
 		
 		// dirty checking
-		parkingLots.update(requestDto.getParkingLotNo(), requestDto.getParkingLotNm());
+		parkingLots.update(requestDto);
 		
 		return id;
 	}
@@ -44,10 +45,10 @@ public class ParkingLotsService {
 		return new ParkingLotsResponseDto(entity);
 	}
 	
-	// 인덱스 페이지 > 주차장 정보 조회
+	// 인덱스 페이지 > 주차장 목록 조회
 	@Transactional(readOnly = true)
-	public List<ParkingLotsResponseDto> findParkingLotInfo() {
-		return parkingLotsRepository.findParkingLotInfo().stream().map(ParkingLotsResponseDto::new).collect(Collectors.toList());
+	public List<ParkingLotsListResponseDto> findParkingLotList() {
+		return parkingLotsRepository.findParkingLotList().stream().map(ParkingLotsListResponseDto::new).collect(Collectors.toList());
 	}
 
 	// 2.사용자가 즐겨찾기 한 주차장 조회
@@ -73,6 +74,13 @@ public class ParkingLotsService {
 		new IllegalArgumentException("해당 주차장 정보가 없습니다. addroad=" + addroad));
 		
 		return new ParkingLotsResponseDto(entity);
+	}
+	
+	// 주차장 데이터 삭제
+	@Transactional
+	public void delete(Long id) {
+		ParkingLots parkingLots = parkingLotsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
+		parkingLotsRepository.delete(parkingLots);
 	}
 
 	// 4.평가 데이터 별 주차장 조회
